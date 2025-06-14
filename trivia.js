@@ -1,4 +1,5 @@
 crearTablero();
+mostrarPregunta();
 
 const preguntas = [
   {
@@ -56,7 +57,7 @@ function responder(opcionElegida) {
   moverFicha(); // <-- mueve la novia después de cada pregunta
 }
 
-mostrarPregunta();
+
 
 // Crear tablero de 32 casilleros
 function crearTablero() {
