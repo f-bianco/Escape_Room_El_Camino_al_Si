@@ -1,4 +1,5 @@
 crearTablero();
+
 const preguntas = [
   {
     pregunta: "¿Cuál es el plato típico chileno?",
