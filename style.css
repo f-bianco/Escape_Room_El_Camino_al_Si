@@ -26,37 +26,43 @@ button {
   cursor: pointer;
 }
 
-/* --- TABLERO --- */
 #tablero {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 8 columnas */
-  gap: 5px;
-  margin-top: 2rem;
-  max-width: 100%; /* que no se desborde */
-  justify-content: center; /* centra el grid */
+  display: flex;
+  flex-wrap: wrap;
+  width: 416px; /* 8 casillas x 52px ancho cada una + gaps */
+  margin: 2rem auto;
+  background: #fff0f5;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px 3px rgba(255, 192, 203, 0.5);
 }
 
 .casillero {
-  background-color: #f3c354;
-  border: 2px solid #b88f2d;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
-  font-size: 0.8rem;
-  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  background: linear-gradient(135deg, #fff, #f8f0e3);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  color: #a15d78;
   display: flex;
-  align-items: center;
   justify-content: center;
-  user-select: none; /* que no se seleccione texto por accidente */
+  align-items: center;
+  position: relative;
+  user-select: none;
 }
 
-/* --- FICHA --- */
+
+/* Ficha novia */
 .ficha {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   top: -25px;
-  pointer-events: none;  /* <-- ¡MUY IMPORTANTE para que no bloquee clicks */
-  user-select: none;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none; /* que no moleste para clicks */
 }
 
 /* --- RESPONSIVE para móvil --- */
