@@ -1,6 +1,8 @@
-crearTablero();
-moverFicha();
-mostrarPregunta();
+document.addEventListener("DOMContentLoaded", function() {
+  crearTablero();
+  moverFicha();
+  mostrarPregunta();
+});
 
 const preguntas = [
   {
@@ -57,7 +59,6 @@ function responder(opcionElegida) {
   mostrarPregunta();
   moverFicha(); // <-- mueve la novia después de cada pregunta
 }
-
 
 
 // Crear tablero de 32 casilleros
