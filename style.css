@@ -24,3 +24,28 @@ button {
   border-radius: 10px;
   cursor: pointer;
 }
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8 columnas */
+  gap: 5px;
+  margin-top: 2rem;
+}
+
+.casillero {
+  background-color: #f3c354;
+  border: 2px solid #b88f2d;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 0.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha {
+  position: absolute;
+  font-size: 1.5rem;
+  top: -25px;
+}
