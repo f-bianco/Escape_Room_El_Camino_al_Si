@@ -1,3 +1,4 @@
+crearTablero();
 const preguntas = [
   {
     pregunta: "¿Cuál es el plato típico chileno?",
@@ -128,4 +129,3 @@ function moverFicha() {
   ficha.innerText = "👰"; // Emoji de novia
   casilla.appendChild(ficha);
 }
-crearTablero();
