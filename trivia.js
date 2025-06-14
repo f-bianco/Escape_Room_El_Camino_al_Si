@@ -1,4 +1,5 @@
 crearTablero();
+moverFicha();
 mostrarPregunta();
 
 const preguntas = [

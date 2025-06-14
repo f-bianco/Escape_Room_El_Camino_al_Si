@@ -54,7 +54,6 @@ button {
   user-select: none;
 }
 
-
 /* Ficha novia */
 .ficha {
   position: absolute;
@@ -62,14 +61,20 @@ button {
   top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  pointer-events: none; /* que no moleste para clicks */
+  pointer-events: none;
+  animation: saltar 0.3s;
+}
+
+@keyframes saltar {
+  0% { transform: translateX(-50%) scale(1.2) translateY(-10px);}
+  100% { transform: translateX(-50%) scale(1) translateY(0);}
 }
 
 /* --- RESPONSIVE para móvil --- */
 @media (max-width: 480px) {
   #tablero {
-    grid-template-columns: repeat(4, 1fr); /* menos columnas para móvil */
-    gap: 3px;
+    width: 140px; /* 4 casillas x 30px + gaps */
+    padding: 6px;
   }
 
   .casillero {
@@ -80,7 +85,7 @@ button {
 
   .ficha {
     font-size: 1.2rem;
-    top: -20px;
+    top: -18px;
   }
 }
 
