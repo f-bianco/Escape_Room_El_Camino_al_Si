@@ -78,7 +78,7 @@ button {
 
 /* Desplaza las casillas de filas impares */
 .casillero.impar {
-  margin-left: 50px; /* Ajusta este valor según el tamaño de tus casillas */
+  margin-left: 30px; /* Ajusta este valor según el tamaño de tus casillas */
 }
 
 /* Ficha novia */
