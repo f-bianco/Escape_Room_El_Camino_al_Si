@@ -53,7 +53,90 @@ button {
   position: relative;
   user-select: none;
 }
+/* ...existing code... */
 
+#tablero {
+  display: flex;
+  flex-wrap: wrap;
+  width: 416px;
+  margin: 2rem auto;
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 6px rgba(255, 192, 203, 0.3);
+  border: 4px double #d4af37;
+  position: relative;
+}
+
+.casillero {
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  background: linear-gradient(135deg, #fff, #ffe4ec 60%, #fff);
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  font-weight: bold;
+  font-family: "Georgia", serif;
+  color: #a15d78;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 2px 8px #f8bbd0;
+  transition: background 0.2s;
+}
+
+.casillero:first-child::before {
+  content: "💍";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+.casillero:last-child::before {
+  content: "💒";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+}
+
+/* Ficha novia */
+.ficha {
+  position: absolute;
+  font-size: 2.2rem;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: saltar 0.3s;
+  filter: drop-shadow(0 2px 4px #fff);
+}
+
+@keyframes saltar {
+  0% { transform: translateX(-50%) scale(1.2) translateY(-10px);}
+  100% { transform: translateX(-50%) scale(1) translateY(0);}
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  #tablero {
+    width: 140px;
+    padding: 6px;
+  }
+  .casillero {
+    width: 30px;
+    height: 30px;
+    font-size: 0.7rem;
+  }
+  .ficha {
+    font-size: 1.2rem;
+    top: -18px;
+  }
+}
 /* Ficha novia */
 .ficha {
   position: absolute;
