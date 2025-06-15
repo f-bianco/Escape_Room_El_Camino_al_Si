@@ -66,27 +66,31 @@ function crearTablero() {
   const tablero = document.getElementById("tablero");
   tablero.innerHTML = "";
 
-  const columnas = 8;
+  // Posiciones en espiral para 8x4 (ajusta si cambias el tamaño)
+  const spiral = [
+    [0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[7,0],
+    [7,1],[7,2],[7,3],
+    [6,3],[5,3],[4,3],[3,3],[2,3],[1,3],[0,3],
+    [0,2],[0,1],
+    [1,1],[2,1],[3,1],[4,1],[5,1],[6,1],
+    [6,2],[5,2],[4,2],[3,2],[2,2],[1,2]
+  ];
+
   for (let i = 0; i < 32; i++) {
     const casilla = document.createElement("div");
     casilla.className = "casillero";
     casilla.id = "casilla-" + i;
 
-    // texto y otros estilos...
+    // Posición en la grilla
+    const [col, row] = spiral[i];
+    casilla.style.gridColumnStart = col + 1;
+    casilla.style.gridRowStart = row + 1;
 
-    const fila = Math.floor(i / columnas);
-    const posEnFila = i % columnas;
-
-    if (fila % 2 === 1) {
-        // fila impar - invertir orden
-        casilla.style.order = fila * columnas + (columnas - posEnFila - 1);
-        casilla.classList.add("impar");
-    } else {
-      casilla.style.order = i;
-    }
+    // Puedes agregar emojis temáticos aquí si quieres
+    // casilla.textContent = "💍";
 
     tablero.appendChild(casilla);
-    }
+  }
 }
 
 

@@ -27,13 +27,14 @@ button {
 }
 
 #tablero {
-  display: flex;
-  flex-wrap: wrap;
-  width: 460px;/* 8 casillas x 50px + 2px de margen por lado */
-  /* ... */
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(4, 50px);
+  gap: 8px;
+  width: max-content;
   margin: 2rem auto;
   background: #fff0f5;
-  padding: 20px;
+  padding: 30px;
   border-radius: 30px;
   box-shadow: 0 0 20px 6px rgba(255, 192, 203, 0.3);
   border: 4px double #d4af37;
@@ -43,9 +44,6 @@ button {
 .casillero {
   width: 50px;
   height: 50px;
-  margin: 8px 2px;
-  background: linear-gradient(135deg, #fff, #ffe4ec 60%, #fff);
-  border: 2px solid #d4af37;
   border-radius: 50%;
   font-weight: bold;
   font-family: "Georgia", serif;
@@ -53,12 +51,12 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  user-select: none;
-  /* box-shadow: 0 2px 8px #f8bbd0; */
+  background: linear-gradient(135deg, #fff, #ffe4ec 60%, #fff);
+  border: 2px solid #d4af37;
   box-shadow: 0 4px 12px #e1bee7, 0 1px 0 #fff inset;
   transition: background 0.2s;
-  border: 3px solid #e57373;
+  position: relative;
+  user-select: none;
 }
 
 .casillero:first-child,
@@ -100,16 +98,13 @@ button {
 /* Responsive para móvil */
 @media (max-width: 480px) {
   #tablero {
-    width: 140px;
-    padding: 6px;
+    grid-template-columns: repeat(8, 28px);
+    grid-template-rows: repeat(4, 28px);
+    padding: 8px;
   }
   .casillero {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     font-size: 0.7rem;
-  }
-  .ficha {
-    font-size: 1.2rem;
-    top: -18px;
   }
 }
