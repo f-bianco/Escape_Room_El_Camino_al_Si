@@ -29,7 +29,8 @@ button {
 #tablero {
   display: flex;
   flex-wrap: wrap;
-  width: 416px;
+  width: 416px;/* 8 casillas x 50px + 2px de margen por lado */
+  /* ... */
   margin: 2rem auto;
   background: #fff0f5;
   padding: 20px;
@@ -73,6 +74,11 @@ button {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.5rem;
+}
+
+/* Desplaza las casillas de filas impares */
+.casillero.impar {
+  margin-left: 28px; /* Ajusta este valor según el tamaño de tus casillas */
 }
 
 /* Ficha novia */

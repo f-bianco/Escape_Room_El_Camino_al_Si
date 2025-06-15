@@ -79,9 +79,10 @@ function crearTablero() {
 
     if (fila % 2 === 1) {
         // fila impar - invertir orden
-        casilla.style.order = fila * columnas + (columnas - posEnFila);
+        casilla.style.order = fila * columnas + (columnas - posEnFila - 1);
+        casilla.classList.add("impar");
     } else {
-        casilla.style.order = i;
+      casilla.style.order = i;
     }
 
     tablero.appendChild(casilla);
