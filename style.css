@@ -55,26 +55,24 @@ button {
   align-items: center;
   position: relative;
   user-select: none;
-  box-shadow: 0 2px 8px #f8bbd0;
+  /* box-shadow: 0 2px 8px #f8bbd0; */
+  box-shadow: 0 4px 12px #e1bee7, 0 1px 0 #fff inset;
   transition: background 0.2s;
+  border: 3px solid #e57373;
 }
 
-.casillero:first-child::before {
-  content: "💍";
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
+.casillero:first-child,
+.casillero:last-child {
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 10px #ffd700;
 }
-.casillero:last-child::before {
-  content: "💒";
-  position: absolute;
-  top: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
+.casillero:nth-child(even) {
+  background: linear-gradient(135deg, #fff, #ffe4ec 60%, #fff);
 }
+.casillero:nth-child(odd) {
+  background: linear-gradient(135deg, #fff, #fffbe4 60%, #fff);
+}
+
 
 /* Desplaza las casillas de filas impares */
 .casillero.impar {
