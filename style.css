@@ -109,28 +109,43 @@ button {
   }
 }
 .ficha-img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;
 }
 @media (max-width: 480px) {
   .ficha-img {
-    width: 22px;
-    height: 22px;
+    width: 36px;
+    height: 36px;
   }
 }
 #novio-msg {
-  margin: 1.5rem auto 0 auto;
-  min-height: 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  min-height: 120px;
+  background: rgba(255,255,255,0.95);
+  border: 3px solid #d4af37;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px #e1bee7;
   text-align: center;
+  z-index: 1000;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }
 .novio-img {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;
-  margin: 0 8px;
+  margin: 16px 0 0 0;
 }
