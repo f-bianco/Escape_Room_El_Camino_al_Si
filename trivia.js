@@ -103,6 +103,6 @@ function moverFicha() {
 
   const ficha = document.createElement("div");
   ficha.className = "ficha";
-  ficha.innerText = "👰"; // Emoji de novia
+  ficha.innerHTML = '<img src="MJ_icon.png" alt="Novia" class="ficha-img">';
   casilla.appendChild(ficha);
 }

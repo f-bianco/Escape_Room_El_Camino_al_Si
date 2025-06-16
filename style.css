@@ -108,3 +108,16 @@ button {
     font-size: 0.7rem;
   }
 }
+.ficha-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #fff;
+}
+@media (max-width: 480px) {
+  .ficha-img {
+    width: 22px;
+    height: 22px;
+  }
+}
