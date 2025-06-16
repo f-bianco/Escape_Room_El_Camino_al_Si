@@ -48,16 +48,28 @@ function mostrarPregunta() {
 
 function responder(opcionElegida) {
   const p = preguntas[indice];
+  const novioMsg = document.getElementById("novio-msg");
+  let msg = "";
+
   if (opcionElegida === p.correcta) {
     puntaje++;
-    alert("✅ ¡Correcto!");
+    msg = `<span style="color:green;font-weight:bold;">¡Correcto!</span>
+           <img src="Felipe_sonriente.png" alt="Novio feliz" class="novio-img">`;
   } else {
-    alert("❌ Incorrecto");
+    msg = `<span style="color:#c0392b;font-weight:bold;">Incorrecto</span>
+           <img src="Felipe_triste.png" alt="Novio triste" class="novio-img">`;
   }
+
+  novioMsg.innerHTML = msg;
+
+  // Oculta la imagen y el texto después de 1.2 segundos
+  setTimeout(() => {
+    novioMsg.innerHTML = "";
+  }, 1200);
 
   indice++;
   mostrarPregunta();
-  moverFicha(); // <-- mueve la novia después de cada pregunta
+  moverFicha();
 }
 
 
