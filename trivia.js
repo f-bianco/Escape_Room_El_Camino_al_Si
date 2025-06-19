@@ -9,43 +9,57 @@ const preguntas = [
     pregunta: "Pololo significa: __________. Proviene del mapudungún “piwollü” que significa _______",
     opciones: ["mosca", "paloma", "murciélago", "pichón"],
     correcta: 0,
-    codigo: "1234"
+    codigo: "1234",
+    explicacion: "La respuesta correcta es mosca, refiriéndose a la cercanía y el revoloteo característico de los enamorados",
+    respondida: false
   },
   {
     pregunta: "Fome significa:",
     opciones: ["hambre", "sueño", "aburrido", "podrido"],
     correcta: 2,
-    codigo: "AEF5"
+    codigo: "AEF5",
+    explicacion: "La respuesta correcta es aburrido",
+    respondida: false
   },
   {
     pregunta: "Pega significa:",
     opciones: ["pegar", "salida", "dinero", "trabajo"],
     correcta: 3,
-    codigo: "B2C3"
+    codigo: "B2C3",
+    explicacion: "La respuesta correcta es trabajo. Viene de “pegar”, refiriéndose a estar pegado a una ocupación, aunque otras teorías dicen que viene del trabajo de pegar piedras durante la construcción del puente Cal y Canto en Santiago",
+    respondida: false
   },
   {
     pregunta: "Sacarle el poto a la jeringa significa:",
     opciones: ["Evadir una responsabilidad o castigo", "Apurarse para hacer algo", "Romper algún objeto", "No darle muchas vueltas a un asunto"],
     correcta: 0,
-    codigo: "D489"
+    codigo: "D489",
+    explicacion: "La respuesta correcta es evadir una responsabilidad o castigo.",
+    respondida: false
   },
   {
     pregunta: "Paco significa:",
     opciones: ["Droga", "Alguien de bajos recursos", "Policía", "Alguien coqueto"],
     correcta: 2,
-    codigo: "F1A2"
+    codigo: "F1A2",
+    explicacion: "La respuesta correcta es policía. Una de las ideas más aceptadas es que el término derivaba de una sigla alusiva a la frase “Personal a Contrata de Orden y Seguridad” (P.A.C.O.S)",
+    respondida: false
   },
   {
     pregunta: "Pichanga significa:",
     opciones: ["Partido informal de fútbol", "Fiesta con amigos", "Bastón usado como arma", "Mentira para dar excusas"],
     correcta: 0,
-    codigo: "C352"
+    codigo: "C352",
+    explicacion: "La respuesta correcta es partido informal de fútbol. Viene de “pichanga”, un platillo chileno que mezcla varios ingredientes, aludiendo a la mezcla informal de jugadores en estos partidos. También se dice que “pichanga” es de origen quechua, derivada del verbo “pichay”, que significa limpiar.",
+    respondida: false
   },
   {
     pregunta: "Pegarse el alcachofazo significa:",
     opciones: ["Pegarse con un alcaucil en la cabeza", "Caerse de un porrazo", "Darse cuenta o entender de algo", "Emborracharse"],
     correcta: 2,
-    codigo: "E490"
+    codigo: "E490",
+    explicacion: "La respuesta correcta es darse cuenta o entender de algo. Es un derivado la frase “pegarse la cachá” que, como explicamos, viene de “cachar”, que es entender o saber una cosa.",
+    respondida: false
   }
 ];
 
@@ -55,16 +69,25 @@ let indice = 0;
 const contenido = document.getElementById("contenido");
 
 
-function mostrarPregunta() {
-  if (indice >= preguntas.length) {
-    contenido.innerHTML = `<h2>🎉 Terminaste la trivia</h2>
-      <p>Obtuviste ${puntaje} de ${preguntas.length} puntos</p>`;
-    return;
-  }
+// function mostrarPregunta() {
+//   if (indice >= preguntas.length) {
+//     contenido.innerHTML = `<h2>🎉 Terminaste la trivia</h2>
+//       <p>Obtuviste ${puntaje} de ${preguntas.length} puntos</p>`;
+//     return;
+//   }
 
-  const p = preguntas[indice];
+//   const p = preguntas[indice];
+//   contenido.innerHTML = `
+//     <h2>Ingresa el código para la pregunta ${indice + 1}:</h2>
+//     <input type="text" id="codigo-input" autocomplete="off">
+//     <button onclick="verificarCodigo()">Verificar</button>
+//     <div id="codigo-error" style="color:#c0392b; margin-top:8px;"></div>
+//   `;
+// }
+
+function mostrarIngresoCodigo() {
   contenido.innerHTML = `
-    <h2>Ingresa el código para la pregunta ${indice + 1}:</h2>
+    <h2>Ingresa el código de la pregunta:</h2>
     <input type="text" id="codigo-input" autocomplete="off">
     <button onclick="verificarCodigo()">Verificar</button>
     <div id="codigo-error" style="color:#c0392b; margin-top:8px;"></div>
@@ -72,53 +95,61 @@ function mostrarPregunta() {
 }
 
 function verificarCodigo() {
-  const p = preguntas[indice];
   const input = document.getElementById("codigo-input").value.trim();
   const errorDiv = document.getElementById("codigo-error");
-  if (input === p.codigo) {
-    mostrarPreguntaReal();
+  // Busca la pregunta por código y que no esté respondida
+  const idx = preguntas.findIndex(p => p.codigo === input && !p.respondida);
+
+  if (idx !== -1) {
+    mostrarPreguntaReal(idx);
   } else {
-    errorDiv.textContent = "Código incorrecto. Intenta de nuevo.";
+    errorDiv.textContent = "Código incorrecto o pregunta ya respondida.";
   }
 }
 
-function mostrarPreguntaReal() {
-  const p = preguntas[indice];
+function mostrarPreguntaReal(idx) {
+  const p = preguntas[idx];
   let html = `<h2>${p.pregunta}</h2><ul>`;
   p.opciones.forEach((opcion, i) => {
-    html += `<li><button onclick="responder(${i})">${opcion}</button></li>`;
+    html += `<li><button onclick="responder(${idx},${i})">${opcion}</button></li>`;
   });
   html += "</ul>";
   contenido.innerHTML = html;
 }
 
-function responder(opcionElegida) {
-  const p = preguntas[indice];
+function responder(idx, opcionElegida) {
+  const p = preguntas[idx];
   const novioMsg = document.getElementById("novio-msg");
   let msg = "";
 
   if (opcionElegida === p.correcta) {
     puntaje++;
     msg = `<span style="color:green;font-weight:bold;">¡Correcto!</span>
-           <img src="Felipe_sonriente.png" alt="Novio feliz" class="novio-img">`;
+           <img src="Felipe_sonriente.png" alt="Novio feliz" class="novio-img"><br>
+           <span style="font-size:1.2rem;">${p.explicacion}</span>`;
   } else {
     msg = `<span style="color:#c0392b;font-weight:bold;">Incorrecto</span>
-           <img src="Felipe_triste.png" alt="Novio triste" class="novio-img">`;
+           <img src="Felipe_triste.png" alt="Novio triste" class="novio-img"><br>
+           <span style="font-size:1.2rem;">${p.explicacion}</span>`;
   }
 
-  // Mostrar el mensaje y la caja
   novioMsg.innerHTML = msg;
   novioMsg.style.display = "flex";
 
-  // Oculta la caja y el mensaje después de 1.2 segundos
   setTimeout(() => {
     novioMsg.style.display = "none";
     novioMsg.innerHTML = "";
-  }, 3500);
+    p.respondida = true;
 
-  indice++;
-  mostrarPregunta();
-  moverFicha();
+    // Si todas respondidas, muestra final
+    if (preguntas.every(q => q.respondida)) {
+      contenido.innerHTML = `<h2>🎉 Terminaste la trivia</h2>
+        <p>Obtuviste ${puntaje} de ${preguntas.length} puntos</p>`;
+    } else {
+      mostrarIngresoCodigo();
+    }
+    moverFicha();
+  }, 2500);
 }
 
 
