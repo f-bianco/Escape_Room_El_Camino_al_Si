@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   crearTablero();
   moverFicha();
-  mostrarPregunta();
+  mostrarIngresoCodigo(); // <-- Esta función debe llamarse al inicio
 });
 
 const preguntas = [
