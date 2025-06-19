@@ -82,7 +82,7 @@ button {
 .ficha {
   position: absolute;
   font-size: 2.2rem;
-  top: -30px;
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -142,10 +142,17 @@ button {
   pointer-events: none;
 }
 .novio-img {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
+  max-width: 90vw;
+  max-height: 60vh;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;
-  margin: 16px 0 0 0;
+}
+@media (max-width: 600px) {
+  .novio-img {
+    width: 160px;
+    height: 160px;
+  }
 }
