@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const preguntas = [
   {
-    pregunta: "¿Cuál es el plato típico chileno?",
-    opciones: ["Arepas", "Empanadas chilenas", "Tacos", "Milanesa"],
-    correcta: 1
+    pregunta: "Pololo significa: __________"
+              "Proviene del mapudungún “piwollü” que significa _______",
+    opciones: ["mosca", "paloma", "murciélago", "pichón"],
+    correcta: 0
   },
   {
     pregunta: "¿Qué moneda se usa en Chile?",
@@ -60,16 +61,13 @@ function responder(opcionElegida) {
            <img src="Felipe_triste.png" alt="Novio triste" class="novio-img">`;
   }
 
+  // Mostrar el mensaje y la caja
   novioMsg.innerHTML = msg;
-  if (msg) {
-    novioMsg.style.display = "flex";
-    novioMsg.innerHTML = msg;
-  } else {
-    novioMsg.style.display = "none";
-    novioMsg.innerHTML = "";
-  }
-  // Oculta la imagen y el texto después de 1.2 segundos
+  novioMsg.style.display = "flex";
+
+  // Oculta la caja y el mensaje después de 1.2 segundos
   setTimeout(() => {
+    novioMsg.style.display = "none";
     novioMsg.innerHTML = "";
   }, 1200);
 
