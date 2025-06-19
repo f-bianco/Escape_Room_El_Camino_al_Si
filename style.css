@@ -128,10 +128,10 @@ button {
   transform: translate(-50%, -50%);
   min-width: 250px;
   min-height: 120px;
-  background: rgba(255,255,255,0.95);
+  /* background: rgba(255,255,255,0.95);
   border: 3px solid #d4af37;
   border-radius: 20px;
-  box-shadow: 0 4px 24px #e1bee7;
+  box-shadow: 0 4px 24px #e1bee7; */
   text-align: center;
   z-index: 1000;
   font-size: 2rem;
@@ -142,8 +142,8 @@ button {
   pointer-events: none;
 }
 .novio-img {
-  width: 130px;
-  height: 1300px;
+  width: 500px;
+  height: 500px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;

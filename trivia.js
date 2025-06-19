@@ -12,15 +12,20 @@ const preguntas = [
     correcta: 0
   },
   {
-    pregunta: "¿Qué moneda se usa en Chile?",
-    opciones: ["Peso chileno", "Dólar", "Euro", "Sol"],
-    correcta: 0
+    pregunta: "Fome significa:",
+    opciones: ["hambre", "sueño", "aburrido", "podrido"],
+    correcta: 2
   },
   {
-    pregunta: "¿En qué mes es el 18 de septiembre en Chile?",
-    opciones: ["Julio", "Septiembre", "Diciembre", "Agosto"],
-    correcta: 1
-  }
+    pregunta: "Pega significa:",
+    opciones: ["pegar", "salida", "dinero", "trabajo"],
+    correcta: 3
+  },
+  {
+    pregunta: "Sacarle el poto a la jeringa significa:",
+    opciones: ["Evadir una responsabilidad o castigo", "Apurarse para hacer algo", "Romper algún objeto", "No darle muchas vueltas a un asunto"],
+    correcta: 0
+  },
 ];
 
 let puntaje = 0;
