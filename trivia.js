@@ -60,6 +60,22 @@ const preguntas = [
     codigo: "E490",
     explicacion: "La respuesta correcta es darse cuenta o entender de algo. Es un derivado la frase “pegarse la cachá” que, como explicamos, viene de “cachar”, que es entender o saber una cosa.",
     respondida: false
+  },
+  {
+  pregunta: "Carrete significa:",
+    opciones: ["Piercing", "Álbum de fotos", "Automóvil antiguo", "Fiesta"],
+    correcta: 3,
+    codigo: "B100",
+    explicacion: "La respuesta correcta es Fiesta. Se relaciona con “carreta”, sugiriendo el movimiento y jolgorio de una fiesta, similar a una carreta en marcha o de un carrete. El origen del término sería español, más que chileno, pero aquí es popular para hablar de fiesta.",
+    respondida: false
+  },
+  {
+  pregunta: "Andar pato significa:",
+    opciones: ["Caminar chueco", "Estar sin dinero", "Estar triste", "Sentirse feliz"],
+    correcta: 1,
+    codigo: "A200",
+    explicacion: "La respuesta correcta es Estar sin dinero. La expresión, se dice, viene del movimiento de buscar en los bolsillos para comprobar si hay dinero y luego levantarlas para decir que hay tiene nada, como el aleteo de un pato.",
+    respondida: false
   }
 ];
 
