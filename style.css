@@ -142,8 +142,8 @@ button {
   pointer-events: none;
 }
 .novio-img {
-  width: 130px;
-  height: 130px;
+  width: 500px;
+  height: 500px;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;

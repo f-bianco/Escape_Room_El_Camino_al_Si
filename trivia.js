@@ -39,7 +39,7 @@ const preguntas = [
     pregunta: "Pegarse el alcachofazo significa:",
     opciones: ["Pegarse con un alcaucil en la cabeza", "Caerse de un porrazo", "Darse cuenta o entender de algo", "Emborracharse"],
     correcta: 2
-  },
+  }
 ];
 
 let puntaje = 0;
