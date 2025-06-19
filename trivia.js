@@ -137,6 +137,7 @@ function responder(idx, opcionElegida) {
   novioMsg.style.display = "flex";
 
   // Agrega el event listener para cerrar al hacer click
+  novioMsg.onclick = null; // antes de asignar el nuevo
   novioMsg.onclick = function() {
     novioMsg.style.display = "none";
     novioMsg.innerHTML = "";
