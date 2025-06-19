@@ -61,7 +61,13 @@ function responder(opcionElegida) {
   }
 
   novioMsg.innerHTML = msg;
-
+  if (msg) {
+    novioMsg.style.display = "flex";
+    novioMsg.innerHTML = msg;
+  } else {
+    novioMsg.style.display = "none";
+    novioMsg.innerHTML = "";
+  }
   // Oculta la imagen y el texto después de 1.2 segundos
   setTimeout(() => {
     novioMsg.innerHTML = "";
