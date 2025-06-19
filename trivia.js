@@ -88,7 +88,7 @@ function responder(opcionElegida) {
   setTimeout(() => {
     novioMsg.style.display = "none";
     novioMsg.innerHTML = "";
-  }, 1200);
+  }, 3500);
 
   indice++;
   mostrarPregunta();

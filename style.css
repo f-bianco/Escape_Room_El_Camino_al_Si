@@ -142,17 +142,17 @@ button {
   pointer-events: none;
 }
 .novio-img {
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   max-width: 90vw;
-  max-height: 60vh;
+  max-height: 70vh;
   object-fit: contain;
   border-radius: 50%;
   box-shadow: 0 2px 8px #fff;
 }
 @media (max-width: 600px) {
   .novio-img {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
   }
 }
