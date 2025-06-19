@@ -25,6 +25,21 @@ const preguntas = [
     opciones: ["Evadir una responsabilidad o castigo", "Apurarse para hacer algo", "Romper algún objeto", "No darle muchas vueltas a un asunto"],
     correcta: 0
   },
+  {
+    pregunta: "Paco significa:",
+    opciones: ["Droga", "Alguien de bajos recursos", "Policía", "Alguien coqueto"],
+    correcta: 2
+  },
+  {
+    pregunta: "Pichanga significa:",
+    opciones: ["Partido informal de fútbol", "Fiesta con amigos", "Bastón usado como arma", "Mentira para dar excusas"],
+    correcta: 0
+  },
+  {
+    pregunta: "Pegarse el alcachofazo significa:",
+    opciones: ["Pegarse con un alcaucil en la cabeza", "Caerse de un porrazo", "Darse cuenta o entender de algo", "Emborracharse"],
+    correcta: 2
+  },
 ];
 
 let puntaje = 0;
