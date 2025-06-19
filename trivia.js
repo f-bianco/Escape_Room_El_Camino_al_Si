@@ -85,22 +85,6 @@ let indice = 0;
 const contenido = document.getElementById("contenido");
 
 
-// function mostrarPregunta() {
-//   if (indice >= preguntas.length) {
-//     contenido.innerHTML = `<h2>🎉 Terminaste la trivia</h2>
-//       <p>Obtuviste ${puntaje} de ${preguntas.length} puntos</p>`;
-//     return;
-//   }
-
-//   const p = preguntas[indice];
-//   contenido.innerHTML = `
-//     <h2>Ingresa el código para la pregunta ${indice + 1}:</h2>
-//     <input type="text" id="codigo-input" autocomplete="off">
-//     <button onclick="verificarCodigo()">Verificar</button>
-//     <div id="codigo-error" style="color:#c0392b; margin-top:8px;"></div>
-//   `;
-// }
-
 function mostrarIngresoCodigo() {
   contenido.innerHTML = `
     <h2>Ingresa el código de la pregunta:</h2>
@@ -152,7 +136,8 @@ function responder(idx, opcionElegida) {
   novioMsg.innerHTML = msg;
   novioMsg.style.display = "flex";
 
-  setTimeout(() => {
+  // Agrega el event listener para cerrar al hacer click
+  novioMsg.onclick = function() {
     novioMsg.style.display = "none";
     novioMsg.innerHTML = "";
     p.respondida = true;
@@ -165,7 +150,9 @@ function responder(idx, opcionElegida) {
       mostrarIngresoCodigo();
     }
     moverFicha();
-  }, 2500);
+    // Limpia el event listener para evitar duplicados
+    novioMsg.onclick = null;
+  };
 }
 
 
