@@ -8,37 +8,44 @@ const preguntas = [
   {
     pregunta: "Pololo significa: __________. Proviene del mapudungún “piwollü” que significa _______",
     opciones: ["mosca", "paloma", "murciélago", "pichón"],
-    correcta: 0
+    correcta: 0,
+    codigo: "1234"
   },
   {
     pregunta: "Fome significa:",
     opciones: ["hambre", "sueño", "aburrido", "podrido"],
-    correcta: 2
+    correcta: 2,
+    codigo: "AEF5"
   },
   {
     pregunta: "Pega significa:",
     opciones: ["pegar", "salida", "dinero", "trabajo"],
-    correcta: 3
+    correcta: 3,
+    codigo: "B2C3"
   },
   {
     pregunta: "Sacarle el poto a la jeringa significa:",
     opciones: ["Evadir una responsabilidad o castigo", "Apurarse para hacer algo", "Romper algún objeto", "No darle muchas vueltas a un asunto"],
-    correcta: 0
+    correcta: 0,
+    codigo: "D489"
   },
   {
     pregunta: "Paco significa:",
     opciones: ["Droga", "Alguien de bajos recursos", "Policía", "Alguien coqueto"],
-    correcta: 2
+    correcta: 2,
+    codigo: "F1A2"
   },
   {
     pregunta: "Pichanga significa:",
     opciones: ["Partido informal de fútbol", "Fiesta con amigos", "Bastón usado como arma", "Mentira para dar excusas"],
-    correcta: 0
+    correcta: 0,
+    codigo: "C352"
   },
   {
     pregunta: "Pegarse el alcachofazo significa:",
     opciones: ["Pegarse con un alcaucil en la cabeza", "Caerse de un porrazo", "Darse cuenta o entender de algo", "Emborracharse"],
-    correcta: 2
+    correcta: 2,
+    codigo: "E490"
   }
 ];
 
@@ -56,12 +63,31 @@ function mostrarPregunta() {
   }
 
   const p = preguntas[indice];
-  let html = `<h2>${p.pregunta}</h2><ul>`;
+  contenido.innerHTML = `
+    <h2>Ingresa el código para la pregunta ${indice + 1}:</h2>
+    <input type="text" id="codigo-input" autocomplete="off">
+    <button onclick="verificarCodigo()">Verificar</button>
+    <div id="codigo-error" style="color:#c0392b; margin-top:8px;"></div>
+  `;
+}
 
+function verificarCodigo() {
+  const p = preguntas[indice];
+  const input = document.getElementById("codigo-input").value.trim();
+  const errorDiv = document.getElementById("codigo-error");
+  if (input === p.codigo) {
+    mostrarPreguntaReal();
+  } else {
+    errorDiv.textContent = "Código incorrecto. Intenta de nuevo.";
+  }
+}
+
+function mostrarPreguntaReal() {
+  const p = preguntas[indice];
+  let html = `<h2>${p.pregunta}</h2><ul>`;
   p.opciones.forEach((opcion, i) => {
     html += `<li><button onclick="responder(${i})">${opcion}</button></li>`;
   });
-
   html += "</ul>";
   contenido.innerHTML = html;
 }
