@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const preguntas = [
   {
-    pregunta: "Pololo significa: __________"
-              "Proviene del mapudungún “piwollü” que significa _______",
+    pregunta: "Pololo significa: __________. Proviene del mapudungún “piwollü” que significa _______",
     opciones: ["mosca", "paloma", "murciélago", "pichón"],
     correcta: 0
   },
