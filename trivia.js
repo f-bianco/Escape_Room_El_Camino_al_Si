@@ -74,7 +74,7 @@ const preguntas = [
     opciones: ["Caminar chueco", "Estar sin dinero", "Estar triste", "Sentirse feliz"],
     correcta: 1,
     codigo: "A200",
-    explicacion: "La respuesta correcta es Estar sin dinero. La expresión, se dice, viene del movimiento de buscar en los bolsillos para comprobar si hay dinero y luego levantarlas para decir que hay tiene nada, como el aleteo de un pato.",
+    explicacion: "La respuesta correcta es Estar sin dinero. La expresión, se dice, viene del movimiento de buscar en los bolsillos para comprobar si hay dinero y luego levantarlas para decir que no tiene nada, como el aleteo de un pato.",
     respondida: false
   }
 ];
@@ -182,6 +182,12 @@ function crearTablero() {
     casilla.style.gridColumnStart = col + 1;
     casilla.style.gridRowStart = row + 1;
 
+    // Número o emoji especial
+    if (i === 7) {
+      casilla.innerHTML = `<span class="casilla-numero" style="font-size:2rem;">🔑</span>`;
+    } else {
+      casilla.innerHTML = `<span class="casilla-numero">${i + 1}</span>`;
+    }
     // Puedes agregar emojis temáticos aquí si quieres
     // casilla.textContent = "💍";
 
