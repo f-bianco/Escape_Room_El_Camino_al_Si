@@ -198,7 +198,7 @@ const preguntas = [
   pregunta: "¿Qué animal es considerado el símbolo nacional de Chile?",
     opciones: ["Cóndor", "Puma", "Huemul", "Llama"],
     correcta: 2,
-    codigo: "C3C1",
+    codigo: "JAA4",
     explicacion: "La respuesta correcta es Huemul. El huemul, un ciervo andino en peligro de extinción, aparece en el escudo nacional de Chile junto con el cóndor.",
     respondida: false
   },
@@ -206,7 +206,7 @@ const preguntas = [
   pregunta: "¿Cuál de estos eventos realmente ocurrió en Chile?",
     opciones: ["Una ciudad fue cubierta por cenizas volcánicas", "Un meteorito cayó en plena Plaza de Armas de Santiago", "Un lago desapareció de la noche a la mañana", "Un tsunami arrasó con un tren en movimiento"],
     correcta: 2,
-    codigo: "0006",
+    codigo: "MIL1",
     explicacion: "La respuesta correcta es Un lago desapareció de la noche a la mañana. En 2007, el Lago Témpanos, en la Patagonia, simplemente desapareció, dejando solo un cráter vacío. Se cree que una fisura en el suelo drenó el agua.",
     respondida: false
   },
@@ -214,7 +214,7 @@ const preguntas = [
   pregunta: "¿Qué hace especial a la momia más antigua del mundo, encontrada en Chile?",
     opciones: ["Es la única momia con tatuajes prehistóricos", "Es más antigua que las momias egipcias", "Fue momificada naturalmente por el desierto", "Es la única momia con órganos intactos"],
     correcta: 1,
-    codigo: "1188",
+    codigo: "FL02",
     explicacion: "La respuesta correcta es Es más antigua que las momias egipcias. Las momias de la cultura Chinchorro, halladas en el norte de Chile, tienen más de 7.000 años, superando en antigüedad a las egipcias.",
     respondida: false
   },
@@ -254,7 +254,7 @@ const preguntas = [
   pregunta: "¿En qué fecha se celebra la Independencia de Chile?",
     opciones: ["18 de septiembre", "12 de octubre", "21 de mayo", "25 de diciembre"],
     correcta: 0,
-    codigo: "JAA4",
+    codigo: "C3C1",
     explicacion: "La respuesta correcta es 18 de septiembre. El 18 de septiembre de 1810 se realizó la Primera Junta Nacional de Gobierno, marcando el inicio del proceso de independencia de Chile",
     respondida: false
   },
@@ -262,7 +262,7 @@ const preguntas = [
   pregunta: "¿Qué batalla clave para la independencia de Chile se libró el 5 de abril de 1818?",
     opciones: ["Batalla de Chacabuco", "Batalla de Maipú", "Batalla de Rancagua", "Batalla de Lircay"],
     correcta: 1,
-    codigo: "MIL1",
+    codigo: "0006",
     explicacion: "La respuesta correcta es Batalla de Maipú. Esta batalla, liderada por Bernardo O’Higgins y José de San Martín, consolidó la independencia de Chile frente a España",
     respondida: false
   },
@@ -270,7 +270,7 @@ const preguntas = [
   pregunta: "¿En qué fecha se celebra el Día de la Bandera en Chile?",
     opciones: ["9 de julio", "16 de julio", "9 de diciembre", "16 de diciembre"],
     correcta: 0,
-    codigo: "FL02",
+    codigo: "1188",
     explicacion: "La respuesta correcta es Batalla de Maipú. Se recuerda la Batalla de La Concepción (1882), donde un grupo de soldados chilenos defendió heroicamente la bandera hasta la muerte en la Guerra del Pacífico",
     respondida: false
   }
